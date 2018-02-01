@@ -10,6 +10,8 @@ Created By me [Abed Putra](http://abedputra.com)
 
 More Gallery visit [http://abedputra.com/golavacms/gallery](http://abedputra.com/golavacms/gallery)
 
+Video visit [here](https://www.youtube.com/watch?v=vHQOM_z0ins)
+
 
 # Install
 - Download or clone.
