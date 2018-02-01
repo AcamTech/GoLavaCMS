@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Blog;
-use App\page;
+use App\Page;
 use App\User;
 use App\Setting;
 use App\Media;
