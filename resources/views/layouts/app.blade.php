@@ -145,8 +145,11 @@
           "insertdatetime media nonbreaking save table contextmenu directionality",
           "emoticons template paste textcolor colorpicker textpattern codesample",
         ],
-        toolbar: "insertfile undo redo | styleselect | bold italic strikethrough | alignleft aligncenter alignright alignjustify | ltr rtl | bullist numlist outdent indent removeformat formatselect| link media | emoticons charmap | code codesample | forecolor backcolor newmedia",
+        toolbar: "insertfile undo redo | styleselect fontselect fontsizeselect | bold italic strikethrough | alignleft aligncenter alignright alignjustify | ltr rtl | bullist numlist outdent indent removeformat formatselect| link media | emoticons charmap | code codesample | forecolor backcolor newmedia",
         image_advtab: true,
+        relative_urls : false,
+        remove_script_host : false,
+        convert_urls : true,
         setup: function (editor) {
         editor.addButton('newmedia', {
          text: 'Add media',
