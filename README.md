@@ -8,6 +8,7 @@ Created By me [Abed Putra](http://abedputra.com)
 
 <img width="100%" alt="GoLavaCMS" src="https://user-images.githubusercontent.com/11581453/35606620-1ed718f8-068b-11e8-8f15-de7f3b15ddde.png">
 
+More Gallery visit [http://abedputra.com/golavacms/gallery](http://abedputra.com/golavacms/gallery)
 
 
 # Install
@@ -17,6 +18,9 @@ Created By me [Abed Putra](http://abedputra.com)
 - ```php artisan migrate```
 - Register new member
 - Done
+
+# Documentation
+Please visit doc page [here](http://abedputra.com/golavacms/documentation)
 
 
 # About
