@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\page;
+use App\Page;
 use App\Blog;
 use App\Mainmenu;
 use App\Submenu;
