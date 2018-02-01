@@ -37,6 +37,7 @@
     @endif
 
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     <link href="{{ asset('public/css/landing-page.css') }}" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -121,30 +122,26 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#about">About</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#services">Services</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#contact">Contact</a>
-                        </li>
-                    </ul>
                     <p class="copyright text-muted small">Copyright 2017 Powered by <a href="http://abedputra.com/">Abed Putra</a> & <a href="https://laravel.com/">Laravel</a>, Design by <a href="https://startbootstrap.com/">Start Bootstrap</a>. All Rights Reserved</p>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- js -->
+    
+    <!-- Javascript -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="{{ asset('public/js/app.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+            //FANCYBOX
+            //https://github.com/fancyapps/fancyBox
+            $(".fancybox").fancybox({
+                openEffect: "none",
+                closeEffect: "none"
+            });
+        });
+    </script>
 </body>
 
 </html>
