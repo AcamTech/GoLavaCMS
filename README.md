@@ -37,7 +37,7 @@ Video visit [here](https://www.youtube.com/watch?v=vHQOM_z0ins)
 - Change your database, username, password on .env file
 - ```php artisan key:generate```
 - ```php artisan migrate```
-- Make sure your storage folder and img golder (public/img) is chmod 0777
+- Make sure your storage folder and img folder (public/img) is chmod 0777
 - Register new member
 - Done
 
