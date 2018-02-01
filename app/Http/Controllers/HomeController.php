@@ -43,15 +43,14 @@ class HomeController extends Controller
     //add blog
     public function showadd()
     {
-        $media = Media::all();//add medai upload
+        $media = Media::all();//add media upload
         return view('blog/addblog', compact('media'));
     }
     //save blog after add blog
     public function storeadd(Request $request)
     {
         $validator = Validator::make(request()->all(), [
-            'title' => 'required|unique:pages',
-            'slug' => 'required|unique:pages',
+            'title' => 'required|unique:blogs'
         ]);
 
         if($validator->passes())
@@ -64,18 +63,14 @@ class HomeController extends Controller
             $blog->titleseo = $request->titleseo;
             $blog->descseo = $request->descriptionseo;
             $blog->keywordseo = $request->keywordseo;
-            $save = $blog->save();
-
-            if($save)
-            {
-              $request->session()->flash('success', 'Successfully saved!');
-              return redirect()->action('HomeController@blog');
-            }
-
+            $blog->save();
+            
+            $request->session()->flash('success', 'Successfully saved!');
+            return redirect()->action('HomeController@blog');
         }
         else
         {
-            return Redirect::to('home/blog/add')
+            return Redirect::to('admin/home/blog/add')
               ->withErrors($validator)
               ->withInput();
         }
@@ -143,7 +138,7 @@ class HomeController extends Controller
         }
         else
         {
-            return Redirect::to('home/blog/edit'.$id)
+            return Redirect::to('admin/home/blog/edit'.$id)
               ->withErrors($validator)
               ->withInput();
         }
@@ -290,8 +285,7 @@ class HomeController extends Controller
     {
 
         $validator = Validator::make(request()->all(), [
-            'title' => 'required|unique:pages',
-            'slug' => 'required|unique:pages',
+            'title' => 'required|unique:pages'
         ]);
 
         if($validator->passes())
