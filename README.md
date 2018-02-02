@@ -1,6 +1,8 @@
 # GoLavaCMS
 Simple CMS with Powerful Performance and SEO Optimized. Built with [Laravel 5.5](https://laravel.com/docs/5.5) and [Bootstrap](http://getbootstrap.com/docs/3.3/).
 
+Visit official website [GoLavaCMS](http://abedputra.com/golavacms)
+
 Created By me [Abed Putra](http://abedputra.com)
 
 # Features
