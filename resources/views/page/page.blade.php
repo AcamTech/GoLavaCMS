@@ -91,11 +91,21 @@
                     @else
                       <td><a href="{{ action('FrontendController@showpage', $page->slug) }}" target="_blank">View</a></td>
                     @endif
-              			<td><a href="{{ action('HomeController@showeditpage', $page->id) }}">Edit</a></td>
+
+                    @if($page->author == Auth::user()->name || $role >= 8)
+                      <td><a href="{{ action('HomeController@showeditpage', $page->id) }}">Edit</a></td>
+                    @else
+                      <td></td>
+                    @endif
+
                     @if(!empty($allsettings) && $allsettings->home_page == $page->title)
               			   <td>Your home page.</td>
                     @else
-                      <td><a href="{{ action('HomeController@deletepage', $page->id) }}">Delete</a></td>
+                      @if($page->author == Auth::user()->name || $role >= 8)
+                        <td><a href="{{ action('HomeController@deletepage', $page->id) }}">Delete</a></td>
+                      @else
+                        <td></td>
+                      @endif
                     @endif
               		</tr>
                 @endforeach

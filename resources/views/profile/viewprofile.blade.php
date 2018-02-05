@@ -14,7 +14,16 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-          <h1>Your Profile</h1>
+          @foreach (['danger', 'warning', 'success', 'info'] as $key)
+           @if(Session::has($key))
+               <div class="alert alert-{{ $key }} alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  {{ Session::get($key) }}
+                </div>
+           @endif
+          @endforeach
+
+          <h1>Profile</h1>
           <hr>
           <div class="container well col-md-12">
           	<div class="row">

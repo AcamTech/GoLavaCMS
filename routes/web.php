@@ -16,6 +16,7 @@ Route::get('/blog/{slug}', 'FrontendController@showblog'); //show the blog page
 Route::get('/{slug}', 'FrontendController@showpage'); //show the page
 
 Route::group(['prefix' => 'admin'], function() {
+    //route Auth
     Auth::routes();
     //dashboard
     Route::get('/home', 'HomeController@index')->name('home'); //main dashboard
@@ -27,12 +28,14 @@ Route::group(['prefix' => 'admin'], function() {
     Route::put('/home/blog/edit/store/{id}', 'HomeController@storeedit'); //proccess edit blog
     Route::get('/home/blog/delete/{id}', 'HomeController@deleteblog'); //delete blog
     //Profile
-    Route::get('/home/profile', 'HomeController@profile'); //profile user
-    Route::get('/home/profile/edit', 'HomeController@profileedit'); //profile edit view
-    Route::get('/home/profile/{id}', 'HomeController@profileid'); //show single profile user
+    Route::get('/home/profile', 'HomeController@profile'); //profile user without
+    Route::get('/home/profile/edit', 'HomeController@profileedit'); //profile edit view current user
+    Route::get('/home/profile/edit/{id}', 'HomeController@profileeditid'); //profile edit all user
+    Route::get('/home/profile/{id}', 'HomeController@profileid'); //show single profile user with id
     Route::put('/home/profile/store/{id}', 'HomeController@profileeditstore'); //profile store
     Route::get('/home/user', 'HomeController@user'); //all user
     Route::get('/home/user/delete/{id}', 'HomeController@deleteuser'); //delete user
+    Route::get('/home/user/approved/{id}', 'HomeController@approveduser'); //delete user
     //page
     Route::get('/home/page', 'HomeController@page'); //view list of page
     Route::get('/home/page/add', 'HomeController@addpage'); //view add page form

@@ -199,7 +199,7 @@
             <div class="form-group">
               <label for="google webmaster" class="col-sm-3 control-label">Google Webmaster</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" name="googlewebmaster" id="googlewebmaster" placeholder="<meta name='google-site-verification' content='ADsxtHmzG1G2FBivU1bk-t8zL8cDMi2AC2tYd45tyhj' />">
+                <input type="text" class="form-control" name="googlewebmaster" id="googlewebmaster" placeholder="8fS1Wms9fakmakmda9a9889daijdasd">
                 <span id="helpBlock" class="help-block">Google Webmaster. More information please visit <a href="https://www.google.com/webmasters">Google Webmaster</a></span>
               </div>
             </div>
@@ -207,7 +207,7 @@
             <div class="form-group">
               <label for="bing webmaster" class="col-sm-3 control-label">Bing Webmaster</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" name="bingwebmaster" id="bingwebmaster" placeholder="<meta name='msvalidate.01' content='0123456789ABCDEF0123456789ABCDEF' />">
+                <input type="text" class="form-control" name="bingwebmaster" id="bingwebmaster" placeholder="899573183A6AB1C7F3E2ID7JAJDJ3E964F5D">
                 <span id="helpBlock" class="help-block">Bing Webmaster. More information please visit <a href="http://www.bing.com/toolbox/webmaster">Bing Webmaster</a></span>
               </div>
             </div>
@@ -215,7 +215,7 @@
             <div class="form-group">
               <label for="alexa" class="col-sm-3 control-label">Alexa</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" name="alexa" id="alexa" placeholder="<meta name='alexaVerifyID' content='kOGOPOP_ghjggpm3Ufdsfdsfswehnyjmuy' />">
+                <input type="text" class="form-control" name="alexa" id="alexa" placeholder="kOGOPOP_ghjggpm3Ufdsfdsfswehnyjmuy">
                 <span id="helpBlock" class="help-block">Alexa. More information please visit <a href="https://www.alexa.com">Alexa</a></span>
               </div>
             </div>
@@ -223,7 +223,7 @@
             <div class="form-group">
               <label for="google analytic" class="col-sm-3 control-label">Google Analytic</label>
               <div class="col-sm-9">
-                <input type="text" class="form-control" name="googleanalytic" id="googleanalytic" placeholder="<meta name='google-site-verification' content='+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34='/>">
+                <input type="text" class="form-control" name="googleanalytic" id="googleanalytic" placeholder="UA-607257678-1">
                 <span id="helpBlock" class="help-block">Google Analytic. More information please visit <a href="https://www.google.com/analytics">Google Analytics</a></span>
               </div>
             </div>

@@ -90,8 +90,18 @@
                    ?>
                   <td><?php echo $newDate; ?></td>
                   <td><a href="{{ action('FrontendController@showblog', $blog->slug) }}" target="_blank">View</a></td>
-            			<td><a href="{{ action('HomeController@showedit', $blog->id) }}">Edit</a></td>
-            			<td><a href="{{ action('HomeController@deleteblog', $blog->id) }}">Delete</a></td>
+
+                  @if($blog->author == Auth::user()->name || $role >= 8)
+                    <td><a href="{{ action('HomeController@showedit', $blog->id) }}">Edit</a></td>
+                  @else
+                    <td></td>
+                  @endif
+
+                  @if($blog->author == Auth::user()->name || $role >= 8)
+                    <td><a href="{{ action('HomeController@deleteblog', $blog->id) }}">Delete</a></td>
+                  @else
+                    <td></td>
+                  @endif
             		</tr>
               @endforeach
           	</tbody>

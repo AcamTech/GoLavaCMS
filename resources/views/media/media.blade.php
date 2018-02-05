@@ -124,7 +124,11 @@
                       <b>Dimension :</b> <?php echo $wH; ?><br>
                       <b>Uploaded on :</b> {{ $medias->created_at }}<br>
                       <b>File type :</b> Image/{{ $medias->extension }}<br><br>
-                      <a href="{{ action('HomeController@deletemedia', $medias->id) }}">Delete</a>
+
+                      @if($medias->author == Auth::user()->name || $role >= 8)
+                        <a href="{{ action('HomeController@deletemedia', $medias->id) }}">Delete</a>
+                      @endif
+
                     </div>
                   @else
                     <div class="col-md-6">
@@ -151,7 +155,11 @@
                       <b>Size :</b> <?php echo $file_size; ?> KB<br>
                       <b>Uploaded on :</b> {{ $medias->created_at }}<br>
                       <b>File type :</b> Document/{{ $medias->extension }}<br><br>
-                      <a href="{{ action('HomeController@deletemedia', $medias->id) }}">Delete</a>
+
+                      @if($medias->author == Auth::user()->name || $role >= 8)
+                        <a href="{{ action('HomeController@deletemedia', $medias->id) }}">Delete</a>
+                      @endif
+
                     </div>
                   @endif
                 </div>

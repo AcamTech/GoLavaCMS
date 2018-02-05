@@ -43,6 +43,7 @@
                   <ul class="nav navbar-nav">
                     @guest
                     @else
+                    @if($role >= 7)
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-text-o" aria-hidden="true"></i> Page <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -50,7 +51,9 @@
                           <li><a href="{{ action('HomeController@addpage') }}">Add New</a></li>
                         </ul>
                       </li>
+                      @endif
 
+                      @if($role >= 7)
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-o" aria-hidden="true"></i> Blog <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -58,7 +61,9 @@
                           <li><a href="{{ action('HomeController@showadd') }}">Add New</a></li>
                         </ul>
                       </li>
+                      @endif
 
+                      @if($role >= 7)
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-picture-o" aria-hidden="true"></i> Media <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -66,7 +71,9 @@
                           <li><a href="{{ action('HomeController@addmedia') }}">Add New</a></li>
                         </ul>
                       </li>
+                      @endif
 
+                      @if($role >= 8)
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i> Navbar <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -74,9 +81,16 @@
                           <li><a href="{{ action('NavbarController@addnavbar') }}">Add New</a></li>
                         </ul>
                       </li>
+                      @endif
 
-                      <li><a href="{{ action('HomeController@user') }}"><i class="fa fa-users" aria-hidden="true"></i> User</a></li>
-                      <li><a href="{{ action('HomeController@setting') }}"><i class="fa fa-cogs" aria-hidden="true"></i> Settings</a></li>
+
+                      @if($role >= 9)
+                        <li><a href="{{ action('HomeController@user') }}"><i class="fa fa-users" aria-hidden="true"></i> User</a></li>
+                      @endif
+
+                      @if($role >= 9)
+                        <li><a href="{{ action('HomeController@setting') }}"><i class="fa fa-cogs" aria-hidden="true"></i> Settings</a></li>
+                      @endif
                     @endguest
                   </ul>
 
@@ -84,32 +98,33 @@
                   <ul class="nav navbar-nav navbar-right">
                       <!-- Authentication Links -->
                       @guest
-                          <li><a href="{{ route('login') }}">Login</a></li>
-                          <li><a href="{{ route('register') }}">Register</a></li>
+                        <li><a href="{{ route('login') }}">Login</a></li>
+                        <li><a href="{{ route('register') }}">Register</a></li>
+                        <li><a href="{{ action('FrontendController@index') }}"><i class="fa fa-arrow-left custom" ></i> Back to Site</a></li>
                       @else
-                          <li><a href="{{ action('FrontendController@index') }}" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i> Visit Site</a></li>
-                          <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                <i class="fa fa-user-circle" aria-hidden="true"></i> {{ Auth::user()->name }} <span class="caret"></span>
-                              </a>
+                        <li><a href="{{ action('FrontendController@index') }}" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i> Visit Site</a></li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i> {{ Auth::user()->name }} <span class="caret"></span>
+                          </a>
 
-                              <ul class="dropdown-menu">
-                                  <li><a href="{{ action('HomeController@profile') }}">Profile</a></li>
-                                  <li><a href="{{ action('HomeController@profileedit') }}">Edit Profile</a></li>
-                                  <li role="separator" class="divider"></li>
-                                  <li>
-                                      <a href="{{ route('logout') }}"
-                                          onclick="event.preventDefault();
-                                                   document.getElementById('logout-form').submit();">
-                                          Logout
-                                      </a>
+                          <ul class="dropdown-menu">
+                              <li><a href="{{ action('HomeController@profile') }}">Profile</a></li>
+                              <li><a href="{{ action('HomeController@profileedit') }}">Edit Profile</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li>
+                                  <a href="{{ route('logout') }}"
+                                      onclick="event.preventDefault();
+                                               document.getElementById('logout-form').submit();">
+                                      Logout
+                                  </a>
 
-                                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                          {{ csrf_field() }}
-                                      </form>
-                                  </li>
-                              </ul>
-                          </li>
+                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                      {{ csrf_field() }}
+                                  </form>
+                              </li>
+                          </ul>
+                        </li>
                       @endguest
                   </ul>
               </div>
@@ -233,7 +248,7 @@
       $(this).addClass("active");
       });
     </script>
-    
+
     <script type="text/javascript">
     	$(document).ready(function () {
     		var url = window.location;

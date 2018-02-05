@@ -13,10 +13,20 @@
     <meta name="author" content="{{ $setting->author }}">
     <link href="{{ $setting->favicon }}" rel="shortcut icon" type="image/x-icon" />
 
-    {!! $setting->googlewebmaster !!}
-    {!! $setting->bingwebmaster !!}
-    {!! $setting->alexa !!}
-    {!! $setting->googleanalytic !!}
+    <meta name="google-site-verification" content="{{ $setting->googlewebmaster }}" />
+    <meta name="msvalidate.01" content="{{ $setting->bingwebmaster }}" />
+    <meta name='alexaVerifyID' content="{{ $setting->alexa }}" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ $setting->googleanalytic }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '{{ $setting->googleanalytic }}');
+    </script>
+
 
     <meta name="revisit-after" content="{{ $setting->revistafter }}">
     <meta name="robots" content="{{ $setting->robots }}">
@@ -99,13 +109,6 @@
                         <li>
                           <a href="{{ action('HomeController@index') }}" style="background: #cfcfcf;">Dashboard</a>
                         </li>
-                    @else
-                      <li>
-                        <a href="{{ route('login') }}">Login</a>
-                      </li>
-                      <li>
-                        <a href="{{ route('register') }}">Register</a>
-                      </li>
                     @endauth
                   @endif
                 </ul>
@@ -122,12 +125,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="copyright text-muted small">Copyright 2017 Powered by <a href="http://abedputra.com/">Abed Putra</a> & <a href="https://laravel.com/">Laravel</a>, Design by <a href="https://startbootstrap.com/">Start Bootstrap</a>. All Rights Reserved</p>
+                    <p class="copyright text-muted small">Copyright &copy; <?php echo date("Y"); ?> Powered by <a href="http://abedputra.com/">Abed Putra</a>, <a href="http://abedputra.com/golavacms">GoLavaCMS</a> & <a href="https://laravel.com/">Laravel</a>, design by <a href="https://startbootstrap.com/">Start Bootstrap</a>.<br>All Rights Reserved</p>
                 </div>
             </div>
         </div>
     </footer>
-    
+
     <!-- Javascript -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="{{ asset('public/js/app.js') }}"></script>
