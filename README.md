@@ -6,8 +6,8 @@ Visit official website [GoLavaCMS](http://abedputra.com/golavacms)
 Created By me [Abed Putra](http://abedputra.com)
 
 # Features
-- Add Page
-- Add Blog
+- Add, delete, edit Page
+- Add, delete, edit Blog
 - SEO Optimize (title, description, keyword)
 - SEO tools
 - Add Menu and submenu
@@ -17,7 +17,9 @@ Created By me [Abed Putra](http://abedputra.com)
 - Editor by [Tinymce](https://www.tinymce.com/)
 - User Profile
 - Delete user
-- Forget password
+- User role
+- Approve or disapproved new register user
+- Forget password (need config email)
 - Edit user profile
 - Gravatar user profile
 - Full settings add google webmaster, bing webmaster, google analytic and much more
@@ -36,6 +38,9 @@ Video visit [here](https://www.youtube.com/watch?v=vHQOM_z0ins)
 
 # Installation
 - Download or clone.
+- ```composer install```
+- Go to folder /file vendor/, copy all files and then.
+- Go to vendor/laravel/framework/src/Illuminate/Foundation/Auth/(paste here, overwrite the file)
 - Change your database, username, password on .env file
 - ```php artisan key:generate```
 - ```php artisan migrate```
